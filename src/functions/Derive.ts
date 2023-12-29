@@ -10,7 +10,7 @@ const Derive: ActivityHandler = async function (
     input: any,
     context: InvocationContext,
 ) {
-    context.log("Enviando mensaje-------------------------------------------------", msg)
+    context.log("Enviando mensaje-------------------------------------------------", input)
     const serviceBusClient = new ServiceBusClient(connectionString);
     const sender = serviceBusClient.createSender(topicName);
 
