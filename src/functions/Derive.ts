@@ -3,7 +3,7 @@ import { InvocationContext, output, input } from "@azure/functions";
 import { ActivityHandler } from 'durable-functions';
 import { ServiceBusClient, ServiceBusMessage } from '@azure/service-bus';
 
-const connectionString = process.env["AzureQueues"];
+const connectionString = process.env["azureQueueConnection"];
 const topicName = "outlook-forward-service"
 
 const Derive: ActivityHandler = async function (
