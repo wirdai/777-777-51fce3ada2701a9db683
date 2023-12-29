@@ -10,7 +10,7 @@ const Derive: ActivityHandler = async function (
     input: any,
     context: InvocationContext,
 ) {
-
+    context.log("Enviando mensaje-------------------------------------------------")
     const serviceBusClient = new ServiceBusClient(connectionString);
     const sender = serviceBusClient.createSender(topicName);
 
@@ -22,11 +22,13 @@ const Derive: ActivityHandler = async function (
         };
 
         await sender.sendMessages(message);
-        context.log(`Data sent to the Service Bus queue`);
-    } finally {
+        context.log(`Data sent to the Service Bus queue--------------------------------------`);
+    }
+    finally {
         await sender.close();
         await serviceBusClient.close();
     }
+    context.log("FIN Enviando mensaje-------------------------------------------------")
 }
 
 df.app.activity("Derive", {
