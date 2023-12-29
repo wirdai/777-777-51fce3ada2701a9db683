@@ -120,7 +120,7 @@ const durableOrchestrator: OrchestrationHandler = function* (
   context.log("Engine processing finished----------------------------------------------", events);
   // Verificacion de resultados
   if (events.length > 0) {
-      context.log("Se encontro regla exitosa ----------------------------------------------");
+      context.log("Se encontro regla exitosa ----------------------------------------------", msg);
       const to = events[0].params.actions[0].params.to;
       yield context.df.callActivity("Derive", msg);
   } else {
