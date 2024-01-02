@@ -19,7 +19,7 @@ const Derive: ActivityHandler = async function (
         // Convert data to bytes or use a serializer based on your data format
         const message: ServiceBusMessage = {
             body: input,
-            subject: "email"
+            subject: "devel"
         };
 
         await sender.sendMessages(message);
